@@ -21,13 +21,6 @@ def get_image():
     return url
 
 
-def get_city(lat, lon):
-    locator = geopy.geocoders.Nominatim(user_agent='geoapiExercises')
-    location = locator.reverse(str(lat) + "," + str(lon))
-    address = location.raw['address']
-    return address
-
-
 def save_user_info(text):
     with open('users.txt', 'a') as file:
         file.write(text)

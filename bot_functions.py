@@ -42,10 +42,7 @@ def contact(message):
     elif message.location is not None:
         lat = message.location.latitude
         long = message.location.longitude
-        city = get_city(lat, long)
-        msg = f'Твой город: {city["city"]}, {city["country"]}'
         forecast = get_forecast(lat, long)
-        bot.send_message(message.chat.id, msg)
         bot.send_message(message.chat.id, text=forecast, parse_mode='html')
 
 
