@@ -46,6 +46,7 @@ def ask_zodiac(message):
     markup.add(*buttons)
     bot.send_message(message.chat.id, 'Выбери свой знак зодиака:', reply_markup=markup)
 
+
 @bot.message_handler(content_types=['contact', 'location'])
 def contact(message):
     if message.contact is not None:  # если в сообщении были отправлены контактные данные пользователя
